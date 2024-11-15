@@ -1,0 +1,22 @@
+run = "npm run start"
+hidden = [".config", "package-lock.json"]
+
+[env]
+PORT = "3000"
+
+[nix]
+channel = "stable-22_11"
+
+[packager]
+language = "nodejs"
+
+[packager.features]
+packageSearch = true
+guessImports = true
+
+[languages.javascript]
+pattern = "**/*.{js,jsx,ts,tsx}"
+syntax = "javascript"
+
+[languages.javascript.languageServer]
+start = [ "typescript-language-server", "--stdio" ]
